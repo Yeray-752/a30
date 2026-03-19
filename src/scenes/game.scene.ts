@@ -42,7 +42,7 @@ export class GameScene extends Scene {
 
         this.miPerro.on('pointerdown', () => {
             try {
-                this.miPerro.ladra();
+                (this.miPerro as any).ladra();
                
             } catch (error) {
                 Bugfender.error('Error ' + error)

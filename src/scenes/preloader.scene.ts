@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import { Bugfender } from '@bugfender/sdk';
+
 
 export class PreloaderScene extends Scene {
     constructor() {
