@@ -11,29 +11,31 @@ export class GameScene extends Scene {
     }
 
     create(): void {
-        const boton = this.add.image(200,200, 'boton')
-        boton.setScale(0.5)
-        boton.setInteractive()
+        const boton = this.add.image(200,200, 'boton');
+        boton.setScale(0.5);
+        boton.setInteractive();
         boton.on('pointerdown', () => {
             try {
-                fetch('http://mi-fetch-rancio')
+                fetch('http://mi-fetch-rancio');
                
-            } catch (error) {
-                Bugfender.error('Error ' + error)
             }
-        })
+            catch (error) {
+                Bugfender.error('Error ' + error);
+            }
+        });
 
 
         this.add.image(400, 570, 'ground');
         this.achoThePup = this.physics.add.image(0, 0, 'acho');
 
         try {
-            this.miPerro = this.physics.add.image(0, 0, 'perro')
+            this.miPerro = this.physics.add.image(0, 0, 'perro');
             this.miPerro.setScale(0.1);
 
-        } catch (error) {
-            Bugfender.error('Fallo al cargar la imagen')
-            console.log('error')
+        }
+        catch (error) {
+            Bugfender.error('Fallo al cargar la imagen');
+          
         }
 
         this.miPerro.setCollideWorldBounds(true);
@@ -42,24 +44,26 @@ export class GameScene extends Scene {
 
         this.miPerro.on('pointerdown', () => {
             try {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (this.miPerro as any).ladra();
                
-            } catch (error) {
-                Bugfender.error('Error ' + error)
             }
-        })
+            catch (error) {
+                Bugfender.error('Error ' + error);
+            }
+        });
 
 
 
         this.achoThePup.setCollideWorldBounds(true);
         this.achoThePup.setBounce(1, 1);
         this.achoThePup.setVelocityX(300);
-        this.achoThePup.setInteractive()
+        this.achoThePup.setInteractive();
 
         this.achoThePup.on('pointerdown', () => {
-            Bugfender.info('prueba')
-            console.log('hola')
-        })
+            Bugfender.info('prueba');
+       
+        });
         Bugfender.info('El usuario ha entrado en la página: ' + window.location.pathname);
 
         this.achoThePup.body.onWorldBounds = true;

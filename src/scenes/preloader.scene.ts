@@ -9,8 +9,8 @@ export class PreloaderScene extends Scene {
     preload(): void {
         this.load.image('acho', 'acho.png');
         this.load.image('ground', 'ground.png');
-        this.load.image('perro', 'perro.jpg')
-        this.load.image('boton', 'boton.png')
+        this.load.image('perro', 'perro.jpg');
+        this.load.image('boton', 'boton.png');
     }
 
     create(): void {
